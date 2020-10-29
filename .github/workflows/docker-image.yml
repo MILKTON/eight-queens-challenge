@@ -15,10 +15,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    #docker-compose build
+    #docker-compose up
     - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker-compose build
     - name: Run docker compose
       run: docker-compose up -d
-    - name: Build the Docker image
-      run: docker-compose -f docker-compose.yml
     - name: Check running containers
       run: docker ps -a
