@@ -1,3 +1,7 @@
+# Configurando github actions
+# https://github.com/peter-evans/docker-compose-actions-workflow
+# https://stackoverflow.com/questions/51968779/error-define-and-run-multi-container-applications-with-docker
+# 
 name: Docker Image CI
 
 on:
@@ -12,6 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Run docker compose
+      run: docker-compose up -d
     - name: Build the Docker image
       run: docker-compose -f docker-compose.yml
     - name: Check running containers
