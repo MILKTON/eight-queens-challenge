@@ -20,6 +20,7 @@ services:
       - POSTGRES_USER=milton
       - POSTGRES_PASSWORD=cuenca
       - POSTGRES_DB=soluciones_reinas
-
+    ports:
+      - 5432:5432
 volumes:
   postgres_data:

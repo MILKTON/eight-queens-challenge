@@ -1,22 +1,30 @@
 from flask import Flask, jsonify
-from flask_sqlalchemy import SQLAlchemy
 from .reinas import coloca_reinas
+from .models import soluciones, init_db
+from sqlalchemy import update
+from .db import Session
 
 app = Flask(__name__)
-app.config.from_object("project.config.Config")
-db = SQLAlchemy(app)
-
-class User(db.Model):
-    __tablename__ = "users"
-
-    id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(128), unique=True, nullable=False)
-    active = db.Column(db.Boolean(), default=True, nullable=False)
-
-    def __init__(self, email):
-      self.email = email
+init_db()
 
 @app.route("/")
 def hello_world():
-    solucion = coloca_reinas(4)
-    return jsonify(solucion)
+  # query a la tabla soluciones 
+  # donde reinas = 4
+  # selet from soluciones where reinas = 4
+  # if existe imprimo
+  # else calculamos e insertamos
+  solucion = coloca_reinas(4)
+  print(solucion)
+
+  #solus = Session.query(soluciones).filter_by(reinas=4).first()
+  #print(solus.soluciones)
+
+  #ins = soluciones(4,solucion) #creacion de objeto sin guardar en variable
+  #ins.insertar_registro()
+
+  #ins = soluciones(4,solucion)
+  #Session.add(ins)
+  #Session.commit()
+  Session.commit() #para hacer commit al final
+  return jsonify(solucion)
