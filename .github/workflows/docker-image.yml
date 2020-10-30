@@ -1,7 +1,8 @@
 # Configurando github actions
 # https://github.com/peter-evans/docker-compose-actions-workflow
 # https://stackoverflow.com/questions/51968779/error-define-and-run-multi-container-applications-with-docker
-# 
+# https://docs.github.com/es/free-pro-team@latest/actions/creating-actions/creating-a-docker-container-action
+
 name: Docker Image CI
 
 on:
