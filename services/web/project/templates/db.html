@@ -6,15 +6,21 @@
     {% block title %} N reinas {% endblock %}
   </title>
   <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}"></link>
-
 {% endblock %}
 
-{% block body %}
-  {% block navbar%}
-    {% include 'navbar.html' %}
-  {% endblock %}
-  {{error}}
+  {% block body %}
+    {% block navbar%}
+      {% include 'navbar.html' %}
+    {% endblock %}
   
+   <div class="container">
+     <div class="row">
+       <div class="col-sm-7">
+         <h3>Se han insertado todas las soluciones a la base de datos</h3>
+       </div>
+     </div>
+   </div>
+
   {% block hello%}
     {% include 'hello.html' %}
   {% endblock %}

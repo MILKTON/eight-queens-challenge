@@ -1,6 +1,3 @@
-#https://github.com/pallets/flask-sqlalchemy
-#https://testdriven.io/blog/dockerizing-flask-with-postgres-gunicorn-and-nginx/
-
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -12,3 +9,5 @@ Base = declarative_base()
 Session.configure(bind=engine)
 Session = Session(autocommit=False)
 
+#    https://github.com/pallets/flask-sqlalchemy
+#    https://testdriven.io/blog/dockerizing-flask-with-postgres-gunicorn-and-nginx/

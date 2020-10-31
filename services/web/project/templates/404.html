@@ -1,3 +1,4 @@
+
 {% extends 'bootstrap/base.html' %}
 
 {% block head %}
@@ -9,21 +10,27 @@
 
 {% endblock %}
 
-{% block body %}
-  {% block navbar%}
-    {% include 'navbar.html' %}
-  {% endblock %}
-  {{error}}
-  
-  {% block hello%}
-    {% include 'hello.html' %}
-  {% endblock %}
+  {% block body %}
+      {% block navbar%}
+        {% include 'navbar.html' %}
+      {% endblock %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      {% block content %}
+        <h1>¿Estás perdido?</h1>
+        <h3>{{error}}</h3>
+      {% endblock %}
+    </div>
+  </div>
+</div>
+
 
 
   {% block footer%}
     {% include 'footer.html' %}
   {% endblock %}
-
   {% endblock %}
 
 

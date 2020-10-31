@@ -1,11 +1,32 @@
-{% block content %}
-<div class="container">
-  {{solucion}}
-</div>
-<ul class="list-group">
-  {% for todo in solus %}
-    <li class="list-group-item"><h2>{{todo}}</h2></li>
-  {% endfor %}
-</ul>
 
-{% endblock %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      {% block content %}
+        <h2>Para {{n}} reinas existen {{total}} soluciones</h2>
+        
+        {% if total != 0 %}
+        <table class="table">
+          <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Solución</th>
+              </tr>
+          </thead>
+          <tbody>
+            {% for todo in solus %}
+              <tr>
+                  <th scope="row">{{loop.index0 + 1}}</th>
+                  <td>{{todo}}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <h1>😢</h1>
+        {% endif %}
+      {% endblock %}
+    </div>
+  </div>
+</div>

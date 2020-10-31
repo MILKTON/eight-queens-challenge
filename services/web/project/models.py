@@ -1,9 +1,8 @@
-from .db import Base, engine
+from .db import Base, engine, Session
 from sqlalchemy import Column
 from sqlalchemy import Integer
 from sqlalchemy import String, JSON
 from sqlalchemy import Sequence
-from .db import Session
 
 class soluciones(Base):
     __tablename__ = "soluciones"
@@ -15,8 +14,10 @@ class soluciones(Base):
         self.reinas=NumReinas
         self.soluciones=Solucion
 
-    def insertar_registro(self): #dentro de la clase soluciones
+    def insertar_registro(self):
         Session.add(self)
 
 def init_db():
   Base.metadata.create_all(bind=engine)
+
+#    https://docs.sqlalchemy.org/en/13/orm/tutorial.html
