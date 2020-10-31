@@ -1,6 +1,38 @@
 # eight-queens-challenge
 Proyecto para la resolución del Coding Challenge de las ocho reinas
 
+## Ejecución del entorno 
+
+Clonar el repositorio actual
+
+Posicionarse en el directorio raíz del proyecto y ejecutar el siguiente comando:
+```
+docker-compose build
+```
+
+Ejecutar los servicios necesarios para el funcionamiento del proyecto:
+
+```
+docker-compose up
+```
+***
+
+Para determinar la solución para un número de reinas igual a 8, basta con ingresar en su navegador en la siguiente URL:
+
+http://localhost:5000/
+
+Se puede acceder a otras soluciones por medio de la barra de navegación. O escribiendo el número de reinas a colocar, por ejemplo para obtener una configuracion de 9 reinas:
+
+http://localhost:5000/resuelve/9
+
+Para guardar todas las posibles soluciones en la base de datos, se debe acceder al siguiente enlace, especificando de igual forma el número de configuraciones deseadas:
+
+http://localhost:5000/dbinsert/10
+
+***
+
+## Definición del problema
+
 [Here's the programming problem](https://en.wikipedia.org/wiki/Eight_queens_puzzle)
 
 These are the different aspect of the project you can work on (in order):
@@ -16,7 +48,9 @@ These are the different aspect of the project you can work on (in order):
 
 >  You can borrow from an existing solution—except for Google's. If you borrow from someone else's code, please cite where you got the code and be ready to explain how the code works.
 
-TO-DO:
+---
+
+## TO-DO:
 - [x] Visual styles in boostrap
 - [x] Work like an API
 - [ ] Make images of solved chess board
