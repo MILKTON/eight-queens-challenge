@@ -1,0 +1,11 @@
+{% block content %}
+<div class="container">
+  {{solucion}}
+</div>
+<ul class="list-group">
+  {% for todo in solus %}
+    <li class="list-group-item"><h2>{{todo}}</h2></li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

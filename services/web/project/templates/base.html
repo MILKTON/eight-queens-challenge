@@ -1,0 +1,24 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block head %}
+  {{ super() }}
+  
+  <title>
+    {% block title %} N reinas {% endblock %}
+  </title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}"></link>
+
+  {% endblock %}
+
+{% block body %}
+  {% block navbar%}
+    {% include 'navbar.html' %}
+  {% endblock %}
+  
+  {% block hello%}
+    {% include 'hello.html' %}
+  {% endblock %}
+
+  {% include 'footer.html' %}
+
+{% endblock %}
