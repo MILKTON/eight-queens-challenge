@@ -4,6 +4,7 @@ from .models import soluciones, init_db
 from sqlalchemy import update
 from .db import Session
 from flask_bootstrap import Bootstrap
+import pytest
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
@@ -30,9 +31,9 @@ def resuelve(n):
     solucion = coloca_reinas(n)
     total = len(solucion)
     context = {
-      'solus' : solucion,
-      'total' : total,
-      'n' : n
+        'solus' : solucion,
+        'total' : total,
+        'n' : n
     }
     return render_template('base.html', **context)
 
@@ -56,6 +57,20 @@ def dbinsert(n):
     return render_template('db.html', **context)
 
 
+
+@app.route('/pruebas', methods=['GET'])
+def pruebas():
+    # https://docs.pytest.org/en/2.8.7/usage.html#calling-pytest-through-python-m-pytest
+    aux = pytest.main(['test.py'])
+    context = {
+        'solus' : 8,
+        'total' : 8,
+        'n' : 8,
+        'aux' : aux
+    }
+    return render_template('test.html', **context)
+
+
 @app.errorhandler(404)
 def not_found(error):
     return render_template('404.html', error=error)
@@ -64,7 +79,6 @@ def not_found(error):
 @app.errorhandler(500)
 def server_error(error):
     return render_template('500.html', error=error)
-
 
 # Referencias
 #    https://testdriven.io/blog/dockerizing-flask-with-postgres-gunicorn-and-nginx/

@@ -1,0 +1,35 @@
+{% extends 'bootstrap/base.html' %}
+
+  {% block head %}
+    {{ super() }}
+    <title>
+      {% block title %} N reinas {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}"></link>
+  {% endblock %}
+
+  {% block body %}
+  
+    {% block navbar%}
+      {% include 'navbar.html' %}
+    {% endblock %}
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-7">
+          {% if aux | string() == "ExitCode.OK" %}
+            <h1>Todas las pruebas han sido ejecutadas correctamente ✅✌️</h1>
+          {% elif aux | string() == "ExitCode.TESTS_FAILED" %}
+            <h1>Alguna prueba fallo ❌👎 </h1>
+          {% elif aux | string() == "ExitCode.NO_TESTS_COLLECTED" %}
+            <h1>No se encontraron pruebas para ejecutar 😕</h1>
+          {% elif aux | string() == "ExitCode.INTERRUPTED" %}
+            <h1>Algo salió mal 😲 </h1>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+  {% endblock %}
+
+
