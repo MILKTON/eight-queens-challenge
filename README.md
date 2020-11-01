@@ -29,6 +29,15 @@ Para guardar todas las posibles soluciones en la base de datos, se debe acceder 
 
 http://localhost:5000/dbinsert/10
 
+Para llevar a cabo las pruebas con pytest
+
+http://localhost:5000/pruebas
+
+***
+Para integración continua se configuro github actions
+
+https://github.com/MILKTON/eight-queens-challenge/actions
+
 ***
 
 ## Definición del problema
@@ -38,7 +47,7 @@ http://localhost:5000/dbinsert/10
 These are the different aspect of the project you can work on (in order):
 1. <del>Determine all possible solutions for a given N where N ≥ 8 (within 10 mins on a laptop). Bonus points for a higher N where N is the size of the board / number of queens</del>
 2. <del>Iterate over N and store the solutions in postgres using SQLAlchemy</del>
-3. Write basic tests that at least verify the number of solutions for a given N match what's git online. I recommend using pytest
+3. <del>Write basic tests that at least verify the number of solutions for a given N match what's git online. I recommend using pytest</del>
 4. <del>Docker-ize the solution, so that I can run the code and tests without any assumption of my local setup (including running a postgres instance in docker-compose)</del>
 5. <del>Setup Travis CI (or similar) for your public GitHub repo to run the tests automatically</del>
 
@@ -54,4 +63,6 @@ These are the different aspect of the project you can work on (in order):
 - [x] Visual styles in boostrap
 - [x] Work like an API
 - [ ] Make images of solved chess board
+- [ ] Make test for UI with flask-test
+
 
