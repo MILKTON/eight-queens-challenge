@@ -16,8 +16,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: dir to directory
-      run: ls -R
       working-directory: ${{env.working-directory}}
+      run: ls -l
     - name: Set up Python 3
       uses: actions/setup-python@v2
       with:
