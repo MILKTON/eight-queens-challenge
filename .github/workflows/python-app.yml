@@ -18,8 +18,6 @@ jobs:
     - name: dir to directory
       run: ls -R
       working-directory: ${{env.working-directory}}
-    - name: check files
-      run: ls -l
     - name: Set up Python 3
       uses: actions/setup-python@v2
       with:
